@@ -29,8 +29,8 @@ ONCE the user puts in his answer, we compare.
 */
 
 let choices = ["rock", "paper", "scissors"];
-let computerSelection = getComputerChoice();
-let humanSelection = getHumanChoice();
+let computerSelection;
+let humanSelection;
 
 function getComputerChoice()
 {
