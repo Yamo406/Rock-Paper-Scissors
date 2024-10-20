@@ -50,5 +50,4 @@ function getComputerChoice()
 }
 let computerChoice = getComputerChoice();
 
-let userChoice = prompt("Rock, Paper, Scissors?");
-console.log(userChoice);
+let userChoice = toLowerCase(prompt("Rock, Paper, Scissors?"));
