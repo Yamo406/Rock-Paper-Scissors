@@ -29,6 +29,8 @@ ONCE the user puts in his answer, we compare.
 */
 
 let choices = ["rock", "paper", "scissors"];
+let computerSelection = getComputerChoice();
+let humanSelection = getHumanChoice();
 
 function getComputerChoice()
 {
@@ -46,8 +48,75 @@ function getComputerChoice()
             break;
         default:
             return "error in the randomNumber";
+        }
+    }
+
+function getHumanChoice()
+{
+    return prompt("Rock, Paper, Scissors?").toLowerCase();
+}
+
+
+
+function playGame()
+{
+    let humanScore = 0, computerScore = 0;
+
+    function playRound(humanChoice, computerChoice)
+    {
+        if (humanChoice === "rock" && computerChoice === "rock")
+        {
+            console.log("It's a TIE!");
+        }
+        else if (humanChoice === "rock" && computerChoice === "scissors")
+        {
+            console.log("You Win! Rock beats Scissors");
+            humanScore++;
+        }
+        else if (humanChoice === "rock" && computerChoice === "paper")
+        {
+            console.log("You Lose! Paper beats Rock");
+            computerScore++;
+        }
+        else if (humanChoice === "paper" && computerChoice === "paper")
+        {
+            console.log("It's a TIE!");
+        }
+        else if (humanChoice === "paper" && computerChoice === "scissors")
+        {
+            console.log("You Lose! Scissors beats Paper");
+            computerScore++;
+        }
+        else if (humanChoice === "paper" && computerChoice === "rock")
+        {
+            console.log("You Win! Paper beats Rock");
+            humanScore++;
+        }
+        else if (humanChoice === "scissors" && computerChoice === "scissors")
+        {
+            console.log("It's a TIE!");
+        }
+        else if (humanChoice === "scissors" && computerChoice === "rock")
+        {
+            console.log("You Lose! Rock beats Scissors");
+            computerScore++;
+        }
+        else if (humanChoice === "scissors" && computerChoice === "paper")
+        {
+            console.log("You Win! Scissors beats Paper");
+            humanScore++;
+        }
+        console.log(`Your Score: "${humanScore}" - Computer's Score: "${computerScore}"`);
+    }
+
+    // round start
+
+    // make a counter that keeps playing the game until there is a winner
+    // the winner must win BO5
+    while (humanScore != 5 && computerScore != 5) {
+        computerSelection = getComputerChoice();
+        humanSelection = getHumanChoice();
+        playRound(humanSelection, computerSelection);
     }
 }
-let computerChoice = getComputerChoice();
-
-let userChoice = toLowerCase(prompt("Rock, Paper, Scissors?"));
+playGame();
