@@ -2,6 +2,14 @@ let choices = ["rock", "paper", "scissors"];
 let computerSelection;
 let humanSelection;
 
+const gameButtons = document.querySelector('.game-buttons');
+const rockButton = document.querySelector('#rock-button');
+const paperButton = document.querySelector('#paper-button');
+const scissorsButton = document.querySelector('#scissors-button');
+
+document.addEventListener('click', () => {
+
+});
 function getComputerChoice()
 {
     let randomNumber = Math.floor(Math.random() * 3);
@@ -78,8 +86,7 @@ function playGame()
         }
         console.log(`Your Score: "${humanScore}" - Computer's Score: "${computerScore}"`);
     }
-
-    while (humanScore != 5 && computerScore != 5)
+    while ()
     {
         computerSelection = getComputerChoice();
         humanSelection = getHumanChoice();
